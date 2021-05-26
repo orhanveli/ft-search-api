@@ -2,8 +2,8 @@ NODE_ENV=development
 
 PORT=5100
 APP_ENV=development
-JWT_SECRET=oksnmdf9oi4jtoignmosinf349jn.asdasd9uj938rj!as$££asd
-REDIS_HOST=192.168.1.61
+JWT_SECRET=
+REDIS_HOST=localhost
 REDIS_PORT=6385
 REDIS_DB=3
 REDIS_PASSWORD=
