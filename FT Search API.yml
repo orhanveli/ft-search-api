@@ -1,0 +1,284 @@
+_type: export
+__export_format: 4
+__export_date: 2021-05-27T21:45:37.729Z
+__export_source: insomnia.desktop.app:v2021.3.0
+resources:
+  - _id: req_f73cc67d2fad48caaf79bcf4b4652c71
+    parentId: wrk_c460ee191aa949118a051dfd4d8ad334
+    modified: 1622040574774
+    created: 1622040561571
+    url: "{{baseUrl}}/"
+    name: Index
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1622040561571
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_c460ee191aa949118a051dfd4d8ad334
+    parentId: null
+    modified: 1622040439865
+    created: 1622040439865
+    name: FT Search API
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_b22ef1aa571a4708a60e6422c38e4d90
+    parentId: wrk_c460ee191aa949118a051dfd4d8ad334
+    modified: 1622043157169
+    created: 1622043145669
+    url: "{{ _.baseUrl }}/create-schema"
+    name: Create schema
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1622043145669
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cdd0e8df896b49d3876677adb6f3ee53
+    parentId: wrk_c460ee191aa949118a051dfd4d8ad334
+    modified: 1622069703338
+    created: 1622044240396
+    url: "{{ _.baseUrl }}/search"
+    name: Search
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - name: q
+        value: llc
+        description: ""
+        id: pair_345bb928217d40cd914187509c5e9103
+      - name: ""
+        value: ""
+        description: ""
+        id: pair_26d3f10b7efd44deae3ed22fe1c89cb4
+    headers: []
+    authentication: {}
+    metaSortKey: -1622044240396
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c5e87a8d63ef4a39b2b7578f6173cfb2
+    parentId: wrk_c460ee191aa949118a051dfd4d8ad334
+    modified: 1622044720659
+    created: 1622044617963
+    url: "{{ _.baseUrl }}/insert-data"
+    name: insert
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"terms": ["asdad"]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_cbf7ce1f2e0a4a599102e6a19b4c39ee
+    authentication: {}
+    metaSortKey: -1622044617963
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_79eddf1c3ce94c6d9570a9f7fc84b68b
+    parentId: fld_8a98956df47242f784692f8b207e3e44
+    modified: 1622040769853
+    created: 1622040703950
+    url: "{{ _.baseUrl }}/auth/login"
+    name: Login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "orhanfirik@gmail.com",
+        	"password": ""
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_af884cf4723b4217b974d2438e26973f
+    authentication: {}
+    metaSortKey: -1622040703950
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_8a98956df47242f784692f8b207e3e44
+    parentId: wrk_c460ee191aa949118a051dfd4d8ad334
+    modified: 1622040694515
+    created: 1622040694515
+    name: Auth
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1622040694515
+    _type: request_group
+  - _id: req_eead9e56b98d49baab9d2e45bba38f48
+    parentId: fld_8a98956df47242f784692f8b207e3e44
+    modified: 1622042952284
+    created: 1622040821126
+    url: "{{ _.baseUrl }}/auth/create-app-token"
+    name: Create App Token
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters:
+      - name: ""
+        value: ""
+        description: ""
+        id: pair_b1a253235492448b8c2733d117427ae0
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_2cbda41ddff64070977b170ce3910556
+      - name: appId
+        value: ""
+        description: ""
+        id: pair_95015949061145aea9fcf0024d384a01
+      - name: ""
+        value: ""
+        description: ""
+        id: pair_6971df0e3b5e4587a17fc410c20dafed
+    authentication:
+      type: bearer
+      token: "{{ _.jwtToken }}"
+    metaSortKey: -1622040821126
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d22933f475614482abdb336262578377
+    parentId: fld_3b562b7a909e484488ad06ea2ff9070d
+    modified: 1622042813221
+    created: 1622042679120
+    url: "{{ _.baseUrl }}/user/create-app"
+    name: Create App
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "",
+        	"app-identifier": ""
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_40968fc5f1d144cfbf09234c997f6ef6
+    authentication:
+      type: bearer
+      token: "{{ _.jwtToken }}"
+    metaSortKey: -1622042679120
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_3b562b7a909e484488ad06ea2ff9070d
+    parentId: wrk_c460ee191aa949118a051dfd4d8ad334
+    modified: 1622042671324
+    created: 1622042671324
+    name: User
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1622042671325
+    _type: request_group
+  - _id: env_8d64c2ee84c370d8d713f62682db339304d10b92
+    parentId: wrk_c460ee191aa949118a051dfd4d8ad334
+    modified: 1622040518261
+    created: 1622040440132
+    name: Base Environment
+    data:
+      baseUrl: http://localhost:5100
+      jwtToken: ""
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+        - jwtToken
+    color: null
+    isPrivate: false
+    metaSortKey: 1622040440132
+    _type: environment
+  - _id: jar_8d64c2ee84c370d8d713f62682db339304d10b92
+    parentId: wrk_c460ee191aa949118a051dfd4d8ad334
+    modified: 1622040440142
+    created: 1622040440142
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_6d83a5c880a2491a92fe1746fa146f6a
+    parentId: wrk_c460ee191aa949118a051dfd4d8ad334
+    modified: 1622040439867
+    created: 1622040439867
+    fileName: FT Search API
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_e79640158c0d450e9c4df3f147533d04
+    parentId: env_8d64c2ee84c370d8d713f62682db339304d10b92
+    modified: 1622040923307
+    created: 1622040658308
+    name: FT API
+    data:
+      username: orhanfirik@gmail.com
+      password: "123457"
+      userToken: ""
+    dataPropertyOrder:
+      "&":
+        - username
+        - password
+        - userToken
+    color: null
+    isPrivate: false
+    metaSortKey: 1622040658308
+    _type: environment
